@@ -18,18 +18,23 @@ const double MIN_CIRCLE_DIST = 40;
 const double HOUGH_ACCUM_TH = 70;
 const int MIN_RADIUS = 20;
 const int MAX_RADIUS = 100;
+const unsigned int MIN_NUM_FEATURES = 200;
 
 int main(int argc, char *argv[]) 
 {
     cv::VideoCapture camera; //OpenCV video capture object
     cv::Mat image; //OpenCV image object
-	int cam_id; //camera id . Associated to device number in /dev/videoX
+        int cam_id; //camera id . Associated to device number in /dev/videoX
+    cv::Ptr<cv::ORB> orb_detector = cv::ORB::create(); //ORB point feature detector
+    orb_detector->setMaxFeatures(MIN_NUM_FEATURES);
+    std::vector<cv::KeyPoint> point_set; //set of point features
+    //cv::Mat descriptor_set; //set of descriptors, for each feature there is an associated descriptor
+	std::vector<cv::Vec3f> circles;
     cv::Mat gray_image;
-    std::vector<cv::Vec3f> circles;
     cv::Point center;
     int radius;
-    
-	//check user args
+
+    //check user args
 	switch(argc)
 	{
 		case 1: //no argument provided, so try /dev/video0
