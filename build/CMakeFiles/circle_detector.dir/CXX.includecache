@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/josep/Dropbox/00.Màster Robòtica 2018-2019/02.Sistemes de Percepció/Exercicis/webcam_circles/src/circle_detector.cpp
+opencv2/opencv.hpp
+/home/josep/Dropbox/00.Màster Robòtica 2018-2019/02.Sistemes de Percepció/Exercicis/webcam_circles/src/opencv2/opencv.hpp
+opencv2/core.hpp
+/home/josep/Dropbox/00.Màster Robòtica 2018-2019/02.Sistemes de Percepció/Exercicis/webcam_circles/src/opencv2/core.hpp
+opencv2/imgproc.hpp
+/home/josep/Dropbox/00.Màster Robòtica 2018-2019/02.Sistemes de Percepció/Exercicis/webcam_circles/src/opencv2/imgproc.hpp
+iostream
+-
+cstdlib
+-
+vector
+-
+
